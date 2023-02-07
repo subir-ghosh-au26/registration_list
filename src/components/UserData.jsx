@@ -1,7 +1,6 @@
 import React from "react";
 import bipard from "../asset/BIPARD.jpg";
 import resData from "../asset/data";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 function UserData(){
@@ -29,8 +28,7 @@ function UserData(){
               <td>Sl No.</td>
               <td colSpan="3">&nbsp;</td>
               <td className="photo" rowSpan="3">
-              <LazyLoadImage src={data.Photo}/>
-                {/* <img src={data.Photo} alt='' width='170px' height='125px'/> */}
+                <img src={data.Photo} alt='' width="120px" height="150px"/>
               </td>
             </tr>
             <tr>
@@ -196,9 +194,7 @@ function UserData(){
           </table>
           <div className="footer">
           <div className="date">
-            <span className="left left1">दिनांक</span>
-            <br />
-            <span className="left">Date:   {data.Date}</span>
+            <p className="left">दिनांक<br/>Date:   {data.Date}</p>
           </div>
           <div className="sign">
             <p className="right"><img src={data.Signature} alt='' width="300px" height="70px" /></p>

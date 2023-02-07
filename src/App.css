@@ -63,25 +63,24 @@ table{
   margin:auto;
   margin-bottom: 0;
 }
-
 .date{
-  /* display: block; */
   width: 100px;
-  height: 45px;
-  margin-left: 250px;
+}
+.left{
+  text-align: left;
 }
 
-.right1{
-margin-left: -500px;
-}
 .sign{
-  /* display: block; */
   width: 300px;
-  margin-left: 300px;
+  background-color: #61dafb;
 }
 
 .footer{
   display: flex;
+  width: 710px;
   flex-direction: row;
-  margin-bottom: 300px;
+  align-items: center;
+  justify-content:space-between;
+  margin: auto;
+  margin-bottom: 450px;
 }
