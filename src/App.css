@@ -72,7 +72,6 @@ table{
 
 .sign{
   width: 300px;
-  background-color: #61dafb;
 }
 
 .footer{
@@ -82,5 +81,5 @@ table{
   align-items: center;
   justify-content:space-between;
   margin: auto;
-  margin-bottom: 450px;
+  margin-bottom: 300px;
 }
