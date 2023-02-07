@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
+.document{
+  border-bottom: 1px solid black;
 
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +38,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+td{
+  border: 1px solid rgb(8, 8, 8);
+}
+tr > td:first-child{
+  width: 10px;
+  font-weight: bold;
+}
+td:nth-child(2){
+  width: 40px;
+  text-align: left;
+}
+td:nth-child(3){
+  width: 100px;
+  text-align: left;
+}
+td:nth-child(4){
+  width: 40px;
+  text-align: left;
+}
+table{
+  width: 740px;
+  margin:auto;
+  margin-bottom: 0;
+}
+
+.date{
+  /* display: block; */
+  width: 100px;
+  height: 45px;
+  margin-left: 250px;
+}
+
+.right1{
+margin-left: -500px;
+}
+.sign{
+  /* display: block; */
+  width: 300px;
+  margin-left: 300px;
+}
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 300px;
 }
