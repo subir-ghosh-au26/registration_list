@@ -92,3 +92,10 @@ table{
   text-align: left;
   margin-top: 20px;
 }
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

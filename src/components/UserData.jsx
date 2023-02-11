@@ -15,9 +15,8 @@ function UserData() {
 
   return (
     <>
-    <button onClick={handleClickPrev}>Prev</button>
-
-      <button onClick={handleClickNext}>Next</button>
+    <div className="btn">
+    <button className="btn btn-primary" onClick={handleClickPrev}>Prev</button>
       <div className="document">
         <img src={bipard} alt="" width="150" height="150" />
         <h2>बिहार लोक प्रशासन और ग्रामीण विकास संस्थान</h2>
@@ -253,6 +252,8 @@ function UserData() {
             </p>
           </div>
         </div>
+      </div>
+      <button className="btn btn-primary" onClick={handleClickNext}>Next</button>
       </div>
     </>
   );
