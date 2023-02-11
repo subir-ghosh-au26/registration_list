@@ -1,34 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import bipard from "../asset/BIPARD.jpg";
 import resData from "../asset/data";
 
+function UserData() {
+  const [index, setIndex] = useState(0);
 
-function UserData(){
-    return(
-      <>
-        {resData.map((data) => {
-            return(
-            <div className="document">
-          <img src={bipard} alt="" width="150" height="150" />
-          <h2>बिहार लोक प्रशासन और ग्रामीण विकास संस्थान</h2>
-          <h2>Bihar Institute Of Public Administration & Rural Development</h2>
-          <h3>Gaya</h3>
-          <h5>REGISTRATION FORM</h5>
-          <h3>पंजीकरण प्रपत्र</h3>
-          <p>
-            बिहार पशु चिकित्स्क पदाधिकारियों के आवासीय सांस्थिक प्रशिक्षण कायर्क्रम!
-          </p>
-          <p>
-            INSTITUTIONAL TRAINING PROGRAMME (RESIDENTIAL) FOR NEWLY APPOINTED
-            OFFICER OF BIHAR VETERINARY SERVICE
-          </p>
-          <table>
-            <tbody>       
+  const handleClickNext = () => {
+    setIndex(index + 1);
+  };
+
+  const handleClickPrev = () => {
+    setIndex(index - 1);
+  };
+
+  return (
+    <>
+    <button onClick={handleClickPrev}>Prev</button>
+
+      <button onClick={handleClickNext}>Next</button>
+      <div className="document">
+        <img src={bipard} alt="" width="150" height="150" />
+        <h2>बिहार लोक प्रशासन और ग्रामीण विकास संस्थान</h2>
+        <h2>Bihar Institute Of Public Administration & Rural Development</h2>
+        <h3>Gaya</h3>
+        <h5>REGISTRATION FORM</h5>
+        <h3>पंजीकरण प्रपत्र</h3>
+        <p>
+          बिहार पशु चिकित्स्क पदाधिकारियों के आवासीय सांस्थिक प्रशिक्षण
+          कायर्क्रम!
+        </p>
+        <p>
+          INSTITUTIONAL TRAINING PROGRAMME (RESIDENTIAL) FOR NEWLY APPOINTED
+          OFFICER OF BIHAR VETERINARY SERVICE
+        </p>
+        <table>
+          <tbody>
             <tr>
               <td>Sl No.</td>
               <td colSpan="3">&nbsp;</td>
               <td className="photo" rowSpan="3">
-                <img src={data.Photo} alt='' width="120px" height="150px"/>
+                <img
+                  src={resData[index].Photo}
+                  alt=""
+                  width="120px"
+                  height="150px"
+                />
               </td>
             </tr>
             <tr>
@@ -38,19 +54,23 @@ function UserData(){
                 <br />
                 Name
               </td>
-              <td colSpan="2">{data.Name}</td>
+              <td colSpan="2">{resData[index].Name}</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>ईमेल<br />Email</td>
-              <td colSpan="2">{data.Email}</td>
+              <td>
+                ईमेल
+                <br />
+                Email
+              </td>
+              <td colSpan="2">{resData[index].Email}</td>
             </tr>
             <tr>
               <td>3</td>
               <td>Mobile No</td>
-              <td>{data.Mobile_Number}</td>
+              <td>{resData[index].Mobile_Number}</td>
               <td>Emergency Contact No.</td>
-              <td>{data.Emergency_Contact_Number}</td>
+              <td>{resData[index].Emergency_Contact_Number}</td>
             </tr>
             <tr>
               <td>4</td>
@@ -59,13 +79,13 @@ function UserData(){
                 <br />
                 Designation
               </td>
-              <td>{data.Designation}</td>
+              <td>{resData[index].Designation}</td>
               <td>
                 शामिल होने की तिथि
                 <br />
                 Date of Joining
               </td>
-              <td>{data.Date_of_Joining}</td>
+              <td>{resData[index].Date_of_Joining}</td>
             </tr>
             <tr>
               <td>5</td>
@@ -74,7 +94,7 @@ function UserData(){
                 <br />
                 Department
               </td>
-              <td colSpan="3">{data.Department}</td>
+              <td colSpan="3">{resData[index].Department}</td>
             </tr>
             <tr>
               <td>6</td>
@@ -83,13 +103,13 @@ function UserData(){
                 <br />
                 Salary
               </td>
-              <td>{data.Salary}</td>
+              <td>{resData[index].Salary}</td>
               <td>
                 मूल वेतन
                 <br />
                 Grade Pay
               </td>
-              <td>{data.Grade_Pay}</td>
+              <td>{resData[index].Grade_Pay}</td>
             </tr>
             <tr>
               <td>7</td>
@@ -98,7 +118,7 @@ function UserData(){
                 <br />
                 Date of Birth
               </td>
-              <td colSpan="3">{data.Date_of_Birth}</td>
+              <td colSpan="3">{resData[index].Date_of_Birth}</td>
             </tr>
             <tr>
               <td>8</td>
@@ -107,7 +127,7 @@ function UserData(){
                 <br />
                 Sex
               </td>
-              <td colSpan="3">{data.Gender}</td>
+              <td colSpan="3">{resData[index].Gender}</td>
             </tr>
             <tr>
               <td>9</td>
@@ -116,7 +136,7 @@ function UserData(){
                 <br />
                 Marital Status
               </td>
-              <td colSpan="3">{data.Marital_Status}</td>
+              <td colSpan="3">{resData[index].Marital_Status}</td>
             </tr>
             <tr>
               <td>10</td>
@@ -125,7 +145,7 @@ function UserData(){
                 <br />
                 Category
               </td>
-              <td colSpan="3">{data.Category}</td>
+              <td colSpan="3">{resData[index].Category}</td>
             </tr>
             <tr>
               <td>11</td>
@@ -134,7 +154,9 @@ function UserData(){
                 <br />
                 Official Address (With PIN Code)
               </td>
-              <td colSpan="3">{data.Official_Address_With_PIN_Code}</td>
+              <td colSpan="3">
+                {resData[index].Official_Address_With_PIN_Code}
+              </td>
             </tr>
             <tr>
               <td>12</td>
@@ -143,7 +165,9 @@ function UserData(){
                 <br />
                 Residential Address (With PIN Code)
               </td>
-              <td colSpan="3">{data.Residential_Address_With_PIN_Code}</td>
+              <td colSpan="3">
+                {resData[index].Residential_Address_With_PIN_Code}
+              </td>
             </tr>
             <tr>
               <td>13</td>
@@ -152,7 +176,7 @@ function UserData(){
                 <br />
                 Educational Qualification
               </td>
-              <td colSpan="3">{data.Educational_Qualification}</td>
+              <td colSpan="3">{resData[index].Educational_Qualification}</td>
             </tr>
             <tr>
               <td>14</td>
@@ -161,7 +185,7 @@ function UserData(){
                 <br />
                 Work Experience
               </td>
-              <td colSpan="3">{data.Work_Experience}</td>
+              <td colSpan="3">{resData[index].Work_Experience}</td>
             </tr>
             <tr>
               <td>15</td>
@@ -170,7 +194,9 @@ function UserData(){
                 <br />
                 Do You have Computer Knowledge
               </td>
-              <td colSpan="3">{data.Do_You_have_Computer_Knowledge}</td>
+              <td colSpan="3">
+                {resData[index].Do_You_have_Computer_Knowledge}
+              </td>
             </tr>
             <tr>
               <td>16</td>
@@ -179,7 +205,7 @@ function UserData(){
                 <br />
                 Training Experience
               </td>
-              <td colSpan="3">{data.Training_Experience}</td>
+              <td colSpan="3">{resData[index].Training_Experience}</td>
             </tr>
             <tr>
               <td>17</td>
@@ -188,29 +214,47 @@ function UserData(){
                 <br />
                 Other Technical Qualification (if any)
               </td>
-              <td colSpan="3">{data.Other_Technical_Qualification}</td>
+              <td colSpan="3">
+                {resData[index].Other_Technical_Qualification}
+              </td>
             </tr>
-            </tbody>
-          </table>
-          <div className="footer">
+          </tbody>
+        </table>
+        <div className="declare">
+          <input type="checkbox" name="declare" checked="checked" />
+          <span>
+            I declare that the information I have provided above is true, and I
+            have not knowingly made a false statement. Please authenticate this
+            form. I will attend the training classes, YOGA sessions and P.T.
+            classes on time.
+          </span>
+        </div>
+        <div className="footer">
           <div className="date">
-            <p className="left">दिनांक<br/>Date:   {data.Date}</p>
+            <p className="left">
+              दिनांक
+              <br />
+              Date: {resData[index].Date}
+            </p>
           </div>
           <div className="sign">
-            <p className="right"><img src={data.Signature} alt='' width="300px" height="70px" /></p>
+            <p className="right">
+              <img
+                src={resData[index].Signature}
+                alt=""
+                width="300px"
+                height="70px"
+              />
+            </p>
             <p className="right">
               प्रतिभागी का हस्ताक्षर
               <br />
               Signature of Participant
             </p>
           </div>
-          
-          </div>
-          </div>
-          )
-        })}
-      </>
-
-    )
+        </div>
+      </div>
+    </>
+  );
 }
 export default UserData;

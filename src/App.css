@@ -81,5 +81,14 @@ table{
   align-items: center;
   justify-content:space-between;
   margin: auto;
-  margin-bottom: 300px;
+  margin-bottom: 215px;
+}
+
+.declare{
+  width: 710px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  text-align: left;
+  margin-top: 20px;
 }
